@@ -1,6 +1,6 @@
 from tkinter import *
 import random
-from tkinter import messagebox
+from tkinter import messagebox as msg
 nl1=None
 t=Tk()
 t.geometry("720x480")
@@ -25,7 +25,7 @@ def checkandgo():
         result=random.randint(intfn,inten)
         la1.configure(text=f"결과 : {result}\n")
     except Exception as e:
-        la1.configure(text=f"오류 발생\n{e}\n")
+        msg.showerror("오류",f"오류가 발생하였습니다.\n{e}")
 cb=Button(t, text="시작", font="맑은고딕 20",command=checkandgo)
 cb.pack()
 t.mainloop()
