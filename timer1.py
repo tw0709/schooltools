@@ -1,1 +1,1 @@
-print("helloworld!")
+from tkinter import *

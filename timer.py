@@ -6,7 +6,7 @@ resultt=0
 timestarted = False
 t=Tk()
 t.geometry("720x480")
-t.title("타이머")
+t.title("스톱워치")
 la1=Label(t,text="시작 버튼을 눌러주세요!",font="맑은고딕 30")
 la1.pack()
 def update_timer():
@@ -14,7 +14,7 @@ def update_timer():
     if timestarted:
         nowt = time.time()
         resultt = nowt - startt
-        la1.configure(text=f"{resultt:.5f}초")
+        la1.configure(text=f"{resultt:.3f}초")
         t.after(1, update_timer)
 
 def timerstart():
