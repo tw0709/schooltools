@@ -4,7 +4,7 @@ import random
 import os
 t=Tk()
 t.geometry("1080x1080")
-t.title("틴 짜기 프로그램")
+t.title("팀 짜기 프로그램")
 lastla=Label(t, text="학생 수 입력",font="맑은고딕 30")
 lasten=Entry(t,font="맑은고딕 20")
 lastla.pack()
