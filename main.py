@@ -16,10 +16,15 @@ def openprogram2():
 def openprogram3():
     subprocess.Popen(["python","timer1.py"])
     sys.exit()
+def openprogram4():
+    subprocess.Popen(["python","teams.py"])
+    sys.exit()
 numbu=Button(t, text="랜덤 번호 뽑기", font="맑은고딕 20", command=openprogram1)
 numbu.pack()
 timbu=Button(t, text="스톱워치", font="맑은고딕 20", command=openprogram2)
 timbu.pack()
 tim2bu=Button(t, text="타이머", font="맑은고딕 20", command=openprogram3)
 tim2bu.pack()
+teambu=Button(t,text="팀 짜기",font="맑은고딕 20",command=openprogram4)
+teambu.pack()
 t.mainloop()
