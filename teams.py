@@ -30,6 +30,8 @@ def go():
 			file=open("team.txt","a")
 			file.write(f"{i}모둠 : {memlist}\n")
 		os.system("team.txt")
+	except Exception as e:
+		msg.showerror("오류",f"오류가 발생했습니다:\n{e}")
 gobutton=Button(t,text="시작",font="맑은고딕 20",command=go)
 gobutton.pack()
 t.mainloop()
