@@ -43,6 +43,8 @@ def go():
 			file.write(f"{a}모둠 : {memlist}\n")
 			a+=1
 			memlist=[]
+		if num%mem!=0:
+			file.write(f"{a}모둠(나머지 사람 모둠) : {numlist}\n")
 		file.close()
 		os.system("start team.txt")
 	except Exception as e:
