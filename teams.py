@@ -31,12 +31,8 @@ def go():
 			exit()
 		for i in range(num):
 			numlist.append(i)
-			print(numlist)
 		numlist.remove(0)
-		print(numlist)
-		print(len(numlist))
 		numlist.append(len(numlist)+1)
-		print(numlist)
 		file=open("team.txt","a")
 		a=1
 		for i in range(num//mem):
@@ -44,9 +40,6 @@ def go():
 				thing=random.choice(numlist)
 				numlist.remove(thing)
 				memlist.append(thing)
-				print(memlist)
-				print(numlist)
-				print()
 			file.write(f"{a}모둠 : {memlist}\n")
 			a+=1
 			memlist=[]
