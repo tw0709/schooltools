@@ -13,6 +13,8 @@ memla=Label(t, text="모둠 학생 수",font="맑은고딕 30")
 memen=Entry(t,font="맑은고딕 20")
 memla.pack()
 memen.pack()
+numlist=[]
+memlist=[]
 def go():
 	try:
 		num=int(lasten.get())
