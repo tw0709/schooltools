@@ -2,6 +2,9 @@ from tkinter import *
 from tkinter import messagebox as msg
 import random
 import os
+f=open("team.txt","w")
+f.write(" ")
+f.close()
 t=Tk()
 t.geometry("1080x1080")
 t.title("팀 짜기 프로그램")
@@ -16,6 +19,10 @@ memen.pack()
 numlist=[]
 memlist=[]
 def go():
+	global memlist
+	numlist=[]
+	memlist=[]
+	os.system("del team.txt")
 	try:
 		num=int(lasten.get())
 		mem=int(memen.get())
@@ -24,14 +31,27 @@ def go():
 			exit()
 		for i in range(num):
 			numlist.append(i)
+			print(numlist)
+		numlist.remove(0)
+		print(numlist)
+		print(len(numlist))
+		numlist.append(len(numlist)+1)
+		print(numlist)
+		file=open("team.txt","a")
+		a=1
 		for i in range(num//mem):
 			for i in range(mem):
 				thing=random.choice(numlist)
-				numlist.pop(thing)
+				numlist.remove(thing)
 				memlist.append(thing)
-			file=open("team.txt","a")
-			file.write(f"{i}모둠 : {memlist}\n")
-		os.system("team.txt")
+				print(memlist)
+				print(numlist)
+				print()
+			file.write(f"{a}모둠 : {memlist}\n")
+			a+=1
+			memlist=[]
+		file.close()
+		os.system("start team.txt")
 	except Exception as e:
 		msg.showerror("오류",f"오류가 발생했습니다:\n{e}")
 gobutton=Button(t,text="시작",font="맑은고딕 20",command=go)
